@@ -30,6 +30,8 @@ import TherapistPosts from "./pages/therapist/Posts";
 import CreatePost from "./pages/therapist/CreatePost";
 
 // Other Pages
+import Index from "./pages/Index";
+import Test from "./pages/Test";
 import NotFound from "./pages/NotFound";
 import { AuthProvider } from "./contexts/AuthContext";
 
@@ -44,14 +46,15 @@ const App = () => (
           <Sonner />
           <Routes>
             {/* Auth Routes */}
-            <Route path="/" element={<Navigate to="/login" replace />} />
+            <Route path="/" element={<Index />} /> {/* Modify this line */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/register/therapist" element={<RegisterTherapist />} />
             <Route path="/register/patient" element={<RegisterPatient />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
-            
+            <Route path="/test" element={<Test />} />
+
             {/* Patient Routes */}
             <Route path="/patient" element={<PatientDashboard />} />
             <Route path="/patient/profile" element={<PatientProfile />} />

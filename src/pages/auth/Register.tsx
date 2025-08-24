@@ -53,12 +53,12 @@ export default function Register() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Construction Worker</h3>
+                  <h3 className="text-xl font-bold">User</h3>
                   <p className="text-muted-foreground mt-2">
-                    Create an account as a construction worker to access mental health resources.
+                    Create an account as a user to access mental health resources.
                   </p>
                 </div>
-                <Button className="mt-auto w-full">Register as Worker</Button>
+                <Button className="mt-auto w-full">Register as User</Button>
               </div>
             </div>
           </Link>
