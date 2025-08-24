@@ -1,14 +1,14 @@
-
 import { useState } from "react";
-import { DashboardLayout } from "@/components/layouts/DashboardLayout";
+import { Link } from "react-router-dom";
 import { PageTitle } from "@/components/shared/PageTitle";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookmarkPlus, Heart, MessageCircle, Share2 } from "lucide-react";
+import { BookmarkPlus, Heart, MessageCircle, MoreHorizontal, Share2, Trash2 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { useAuth } from "@/contexts/AuthContext";
@@ -184,24 +184,25 @@ export default function PatientPosts() {
   };
 
   return (
-    <DashboardLayout>
-      <div className="p-6 space-y-6">
-        <PageTitle title="Mental Health Posts" subtitle="Insights and advice from mental health professionals" />
-        
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Input
-            placeholder="Search posts..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="max-w-md bg-black/30"
-          />
+    <div className="p-6 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <PageTitle title="Mental Health Posts" subtitle="Insights and advice from mental health professionals" />
           
-          <Tabs defaultValue="all" onValueChange={setActiveTab} className="w-full sm:w-auto">
-            <TabsList>
-              <TabsTrigger value="all">All Posts</TabsTrigger>
-              <TabsTrigger value="saved">Saved</TabsTrigger>
-            </TabsList>
-          </Tabs>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Input
+              placeholder="Search posts..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="max-w-md bg-black/30"
+            />
+            
+            <Tabs defaultValue="all" onValueChange={setActiveTab} className="w-full sm:w-auto">
+              <TabsList>
+                <TabsTrigger value="all">All Posts</TabsTrigger>
+                <TabsTrigger value="saved">Saved</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
         </div>
         
         <motion.div 
@@ -326,6 +327,5 @@ export default function PatientPosts() {
           )}
         </motion.div>
       </div>
-    </DashboardLayout>
   );
 }

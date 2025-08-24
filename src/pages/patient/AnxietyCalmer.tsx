@@ -1,6 +1,4 @@
-
 import { useState, useRef, useEffect } from "react";
-import { DashboardLayout } from "@/components/layouts/DashboardLayout";
 import { PageTitle } from "@/components/shared/PageTitle";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -244,8 +242,7 @@ export default function AnxietyCalmer() {
   };
   
   return (
-    <DashboardLayout>
-      <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6">
         <PageTitle title="Anxiety Calmer" subtitle="Relax with soothing sounds and guided meditations" />
         
         <Tabs defaultValue="all" onValueChange={setActiveTab}>
@@ -421,6 +418,5 @@ export default function AnxietyCalmer() {
           </motion.div>
         )}
       </div>
-    </DashboardLayout>
   );
 }
